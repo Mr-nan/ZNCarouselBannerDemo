@@ -1,6 +1,6 @@
 # ZNCarouselBannerDemo
 
-###实现图片循环滚动</br><\br>
+###实现图片循环滚动</br></br>
 ###实现方法：</br>
 >###参数说明: </br>
 >>>frame - 控件大小</br>
