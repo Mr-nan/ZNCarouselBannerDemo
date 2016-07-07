@@ -10,22 +10,28 @@
 
 typedef enum {
     
-    imageURLType =  0,
+    imageURLType =  0, 
     imageType = 1,
   
 
 
 }ZNImageSourceType;
 
+
+@protocol  ZNRotateBannerViewDelegate<NSObject>
+
+- (void)ZNRotateBannerClickImageIndex:(NSInteger)imageIndex;
+
+- (void)ZNRotatebannerCurrentImageIndex:(NSInteger)imageIndex;
+
+@end
+
 @interface ZNRotateBannerView : UIView
 
-
-
-@property (nonatomic,copy) NSArray  *imageArray;        //  图片数组
-@property (nonatomic,copy) NSArray  *imageURLArray;     //  图片URL数组
-
-@property (nonatomic,assign) BOOL   isAutoScroll;       //  是否自动滚动
+@property (nonatomic,assign) BOOL   isAutoScroll;       //  是否自动滚动  默认是自动
+@property (nonatomic,weak) id<ZNRotateBannerViewDelegate> delegate;
 
 -(instancetype)initWithFrame:(CGRect)frame ImageSource:(NSArray *)imageSource ImageSourceType:(ZNImageSourceType)imageSourceType;
+
 
 @end
